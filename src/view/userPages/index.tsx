@@ -39,11 +39,11 @@ const styles = StyleSheet.create({
   logo: {
     maxHeight:
       Screen().height > Screen().width
-        ? Screen().height * 0.09
+        ? Screen().height * 0.07
         : Screen().width * 0.1,
     maxWidth:
       Screen().height > Screen().width
-        ? Screen().height * 0.09
+        ? Screen().height * 0.07
         : Screen().width * 0.1,
     borderColor: 'black',
     borderWidth: 4,
