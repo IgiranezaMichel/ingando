@@ -30,19 +30,21 @@ const styles = StyleSheet.create({
     backgroundColor: 'blue',
     height:
       Screen().height > Screen().width
-        ? Screen().height * 0.1
+        ? Screen().height * 0.16
         : Screen().width * 0.2,
     display: 'flex',
     alignItems: 'center',
     justifyContent: 'center',
   },
   logo: {
-    width:
+    maxHeight:
       Screen().height > Screen().width
-        ? Screen().height * 0.9
-        : Screen().width * 0.2,
-    height: Screen().width / 7,
-    maxWidth: Screen().width / 7,
+        ? Screen().height * 0.09
+        : Screen().width * 0.1,
+    maxWidth:
+      Screen().height > Screen().width
+        ? Screen().height * 0.09
+        : Screen().width * 0.1,
     borderColor: 'black',
     borderWidth: 4,
     borderRadius: 20,
