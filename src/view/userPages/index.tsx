@@ -1,6 +1,6 @@
 /* eslint-disable react-native/no-inline-styles */
 import React from 'react';
-import {View, Image, Text, StyleSheet} from 'react-native';
+import {View, Image, Text, StyleSheet, TouchableOpacity} from 'react-native';
 import LottieView from 'lottie-react-native';
 import {Screen} from '../../hooks/screen';
 
@@ -10,6 +10,17 @@ export const Home = () => {
       <View style={styles.subLogoContainer}>
         <Image style={styles.logo} source={require('../../assets/logo.png')} />
         {/* Enclose the text within a Text component */}
+      </View>
+      <View style={styles.subContationer}>
+        <Text style={styles.recentIngandoTxt}>Recent Ingando</Text>
+        <View style={styles.subContationerItemView}>
+          <TouchableOpacity>
+            <Text style={styles.recentIngandoTxt}>All</Text>
+          </TouchableOpacity>
+          <TouchableOpacity>
+            <Text style={styles.recentIngandoTxt}>History</Text>
+          </TouchableOpacity>
+        </View>
       </View>
       <LottieView
         autoPlay={true}
@@ -48,5 +59,21 @@ const styles = StyleSheet.create({
     borderColor: 'black',
     borderWidth: 4,
     borderRadius: 20,
+  },
+  recentIngandoTxt: {
+    color: 'black',
+    fontWeight: 'bold',
+    fontFamily: 'fantasy',
+    fontSize: Screen().width * 0.06,
+  },
+  subContationer: {
+    width: Screen().width,
+    flexDirection: 'row',
+    display: 'flex',
+  },
+  subContationerItemView: {
+    flexDirection: 'row',
+    alignSelf: 'baseline',
+    width: Screen().width,
   },
 });
