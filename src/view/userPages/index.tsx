@@ -14,7 +14,7 @@ export const Home = () => {
       <View style={styles.subContationer}>
         <Text style={styles.recentIngandoTxt}>Recent Ingando</Text>
         <View style={styles.subContationerItemView}>
-          <TouchableOpacity>
+          <TouchableOpacity style={styles.allBtn}>
             <Text style={styles.allTxt}>All</Text>
           </TouchableOpacity>
           <TouchableOpacity>
@@ -87,6 +87,9 @@ const styles = StyleSheet.create({
     backgroundColor: 'blue',
     borderWidth: 2,
     borderColor: 'blue',
-    padding: 3,
+  },
+  allBtn: {
+    backgroundColor: 'white',
+    padding: 2,
   },
 });
