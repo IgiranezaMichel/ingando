@@ -1,11 +1,10 @@
 /* eslint-disable react/react-in-jsx-scope */
-import {View} from 'react-native';
-import Index from './src/view/Index';
+import {Login} from './src/view/auth/Login';
 function App(): React.JSX.Element {
   return (
-    <View>
-      <Index />
-    </View>
+    <>
+      <Login />
+    </>
   );
 }
 
