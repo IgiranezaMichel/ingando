@@ -30,6 +30,11 @@ export const Login = () => {
               <Text style={styles.loginTxt}>Login</Text>
             </View>
           </TouchableWithoutFeedback>
+          <TouchableWithoutFeedback onPress={() => {}}>
+            <View style={styles.signUpBtn}>
+              <Text style={styles.signUpTxt}>Sign up</Text>
+            </View>
+          </TouchableWithoutFeedback>
         </View>
       </View>
     </ScrollView>
@@ -37,10 +42,11 @@ export const Login = () => {
 };
 const styles = StyleSheet.create({
   container: {
-    transform: [{translateY: -(screenHeight / 2) * 0.3}],
+    transform: [{translateY: -(screenHeight / 2) * 0.27}],
     backgroundColor: 'white',
     marginLeft: screenWidth * 0.07,
     marginRight: screenWidth * 0.07,
+    borderColor: 'black',
     borderRadius: 10,
   },
   logoContainer: {
@@ -49,6 +55,8 @@ const styles = StyleSheet.create({
     display: 'flex',
     justifyContent: 'center',
     alignItems: 'center',
+    borderBottomLeftRadius: 10,
+    borderBottomRightRadius: 10,
   },
   logo: {
     height: 80,
@@ -76,5 +84,20 @@ const styles = StyleSheet.create({
     fontSize: 23,
     color: 'white',
     fontWeight: 'bold',
+    padding: 6,
+  },
+  signUpBtn: {
+    borderColor: 'black',
+    backgroundColor: 'green',
+    width: screenWidth * 0.8,
+    alignSelf: 'center',
+    marginTop: screenHeight * 0.03,
+  },
+  signUpTxt: {
+    alignSelf: 'center',
+    fontSize: 23,
+    color: 'white',
+    fontWeight: 'bold',
+    padding: 6,
   },
 });
