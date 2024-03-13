@@ -42,7 +42,7 @@ export const Login = () => {
 };
 const styles = StyleSheet.create({
   container1: {
-    backgroundColor: 'grey',
+    backgroundColor: 'rgba(240, 248, 255, 0.667)',
   },
   container: {
     transform: [{translateY: -(screenHeight / 2) * 0.27}],
@@ -50,6 +50,10 @@ const styles = StyleSheet.create({
     marginLeft: screenWidth * 0.07,
     marginRight: screenWidth * 0.07,
     borderColor: 'black',
+    shadowColor: '#000',
+    shadowOpacity: 0.9,
+    shadowRadius: 5,
+    elevation: 10,
     paddingTop: 30,
     paddingBottom: 40,
     borderRadius: 10,
