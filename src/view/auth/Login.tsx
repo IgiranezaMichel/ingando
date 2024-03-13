@@ -12,7 +12,7 @@ const screenHeight = Dimensions.get('screen').height;
 const screenWidth = Dimensions.get('screen').width;
 export const Login = () => {
   return (
-    <ScrollView>
+    <ScrollView style={styles.container1}>
       <View style={styles.logoContainer}>
         <Image
           style={styles.logo}
@@ -41,12 +41,17 @@ export const Login = () => {
   );
 };
 const styles = StyleSheet.create({
+  container1: {
+    backgroundColor: 'grey',
+  },
   container: {
     transform: [{translateY: -(screenHeight / 2) * 0.27}],
     backgroundColor: 'white',
     marginLeft: screenWidth * 0.07,
     marginRight: screenWidth * 0.07,
     borderColor: 'black',
+    paddingTop: 30,
+    paddingBottom: 40,
     borderRadius: 10,
   },
   logoContainer: {
