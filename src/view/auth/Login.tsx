@@ -20,20 +20,23 @@ export const Login = () => {
         />
       </View>
       <View style={styles.container}>
-        <Text style={styles.textDescription}>
-          Welcome to Adventist Youth App
-        </Text>
-        <TouchableWithoutFeedback onPress={() => {}}>
-          <Text>Login</Text>
-        </TouchableWithoutFeedback>
+        <View>
+          <Text style={styles.textDescription}>
+            Welcome to Adventist Youth App
+          </Text>
+          <Text style={styles.ingando}>Ingando Management System</Text>
+          <TouchableWithoutFeedback onPress={() => {}}>
+            <View style={styles.loginBtn}>
+              <Text>Login</Text>
+            </View>
+          </TouchableWithoutFeedback>
+        </View>
       </View>
     </ScrollView>
   );
 };
 const styles = StyleSheet.create({
   container: {
-    display: 'flex',
-    alignItems: 'center',
     transform: [{translateY: -(screenHeight / 2) * 0.3}],
     backgroundColor: 'white',
     marginLeft: screenWidth * 0.07,
@@ -53,8 +56,19 @@ const styles = StyleSheet.create({
   },
   textDescription: {
     fontFamily: 'fantasy',
+    color: 'black',
     fontWeight: 'bold',
     fontSize: 19,
     padding: 12,
+  },
+  loginBtn: {
+    borderColor: 'black',
+    backgroundColor: 'green',
+    width: screenWidth * 0.8,
+    alignSelf: 'center',
+  },
+  ingando: {
+    alignSelf: 'center',
+    padding: screenHeight * 0.03,
   },
 });
