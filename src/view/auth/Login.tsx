@@ -27,7 +27,7 @@ export const Login = () => {
           <Text style={styles.ingando}>Ingando Management System</Text>
           <TouchableWithoutFeedback onPress={() => {}}>
             <View style={styles.loginBtn}>
-              <Text>Login</Text>
+              <Text style={styles.loginTxt}>Login</Text>
             </View>
           </TouchableWithoutFeedback>
         </View>
@@ -70,5 +70,11 @@ const styles = StyleSheet.create({
   ingando: {
     alignSelf: 'center',
     padding: screenHeight * 0.03,
+  },
+  loginTxt: {
+    alignSelf: 'center',
+    fontSize: 23,
+    color: 'white',
+    fontWeight: 'bold',
   },
 });
