@@ -7,12 +7,14 @@ import {
   Dimensions,
   Image,
   TouchableWithoutFeedback,
+  StatusBar,
 } from 'react-native';
 const screenHeight = Dimensions.get('screen').height;
 const screenWidth = Dimensions.get('screen').width;
 export const Login = () => {
   return (
     <ScrollView style={styles.container}>
+      <StatusBar backgroundColor={'blue'} />
       <View style={styles.logoContainer}>
         <Image
           style={styles.logo}
