@@ -1,4 +1,5 @@
 /* eslint-disable react/react-in-jsx-scope */
+import { Canvas, Circle } from '@shopify/react-native-skia';
 import {
   ScrollView,
   View,
@@ -8,30 +9,75 @@ import {
   Image,
   TouchableWithoutFeedback,
   StatusBar,
+  TextInput,
 } from 'react-native';
+
 const screenHeight = Dimensions.get('screen').height;
 const screenWidth = Dimensions.get('screen').width;
 export const Login = () => {
   return (
     <ScrollView style={styles.container}>
       <StatusBar backgroundColor={'blue'} />
+      
       <View style={styles.logoContainer}>
         <Image
           style={styles.logo}
           source={require('../../assets/visitor/download.png')}
         />
+        <Canvas>
+          <Circle cx={200} r={4}/>
+        </Canvas>
       </View>
       <View style={styles.btnOptionsContainer}>
         <View>
-          <Text style={styles.textDescription}>
-            Welcome to Adventist Youth App
-          </Text>
-          <Text style={styles.ingando}>Ingando Management System</Text>
-          <TouchableWithoutFeedback onPress={() => {}}>
-            <View style={styles.loginBtn}>
-              <Text style={styles.loginTxt}>Login</Text>
-            </View>
-          </TouchableWithoutFeedback>
+          <View style={styles.avatarContainer}>
+            <Image
+              style={styles.avatar}
+              source={require('../../assets/visitor/avatar.png')}
+            />
+          </View>
+          <View>
+            <Text style={styles.avatarLegend}>Sign up form</Text>
+          </View>
+          <TextInput
+            style={styles.firstNameInput}
+            underlineColorAndroid={'blue'}
+            placeholderTextColor={'grey'}
+            placeholder="Enter your name ..."
+          />
+
+          <TextInput
+            style={styles.firstNameInput}
+            underlineColorAndroid={'blue'}
+            placeholderTextColor={'grey'}
+            placeholder="Enter your gender ..."
+          />
+          <TextInput
+            style={styles.firstNameInput}
+            underlineColorAndroid={'blue'}
+            placeholderTextColor={'grey'}
+            placeholder="Enter your phone number ..."
+          />
+          <TextInput
+            style={styles.firstNameInput}
+            underlineColorAndroid={'blue'}
+            placeholderTextColor={'grey'}
+            placeholder="Enter your Email ..."
+          />
+          <TextInput
+            secureTextEntry={true}
+            style={styles.firstNameInput}
+            underlineColorAndroid={'blue'}
+            placeholderTextColor={'grey'}
+            placeholder="Enter your Password ..."
+          />
+          <TextInput
+            secureTextEntry={true}
+            style={styles.firstNameInput}
+            underlineColorAndroid={'blue'}
+            placeholderTextColor={'grey'}
+            placeholder="Re write your Password ..."
+          />
           <TouchableWithoutFeedback onPress={() => {}}>
             <View style={styles.signUpBtn}>
               <Text style={styles.signUpTxt}>Sign up</Text>
@@ -47,7 +93,6 @@ const styles = StyleSheet.create({
     backgroundColor: 'rgba(240, 248, 255, 0.667)',
   },
   btnOptionsContainer: {
-    transform: [{translateY: -(screenHeight / 2) * 0.27}],
     backgroundColor: 'white',
     marginLeft: screenWidth * 0.07,
     marginRight: screenWidth * 0.07,
@@ -62,7 +107,7 @@ const styles = StyleSheet.create({
   },
   logoContainer: {
     backgroundColor: 'blue',
-    height: screenHeight / 2,
+    height: screenHeight / 5,
     display: 'flex',
     justifyContent: 'center',
     alignItems: 'center',
@@ -71,32 +116,32 @@ const styles = StyleSheet.create({
   },
   logo: {
     height: 80,
-    width: 60,
+    width: 80,
+  },
+  avatar: {
+    width: screenWidth * 0.2,
+    height: screenWidth * 0.2,
+    alignSelf: 'center',
+  },
+  avatarContainer: {
+    width: screenWidth * 0.3,
+    height: screenWidth * 0.3,
+    transform: [{translateY: -(screenHeight * 0.09)}],
+    alignSelf: 'center',
+    backgroundColor: 'white',
+    display: 'flex',
+    alignItems: 'center',
+    borderRadius: 50,
   },
   textDescription: {
     fontFamily: 'fantasy',
     color: 'black',
     fontWeight: 'bold',
+    textAlign: 'center',
     fontSize: 19,
     padding: 12,
   },
-  loginBtn: {
-    borderColor: 'black',
-    backgroundColor: 'green',
-    width: screenWidth * 0.8,
-    alignSelf: 'center',
-  },
-  ingando: {
-    alignSelf: 'center',
-    padding: screenHeight * 0.03,
-  },
-  loginTxt: {
-    alignSelf: 'center',
-    fontSize: 23,
-    color: 'white',
-    fontWeight: 'bold',
-    padding: 6,
-  },
+
   signUpBtn: {
     borderColor: 'black',
     backgroundColor: 'green',
@@ -110,5 +155,18 @@ const styles = StyleSheet.create({
     color: 'white',
     fontWeight: 'bold',
     padding: 6,
+  },
+  firstNameInput: {
+    color: 'black',
+    width: screenWidth * 0.8,
+    alignSelf: 'center',
+  },
+  avatarLegend: {
+    color: 'black',
+    fontFamily: 'fantasy',
+    fontWeight: 'bold',
+    alignSelf: 'center',
+    fontSize: (screenWidth / screenHeight) * 60,
+    transform: [{translateY: -(screenHeight / 2) * 0.1}],
   },
 });
