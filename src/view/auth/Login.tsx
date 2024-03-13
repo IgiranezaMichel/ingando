@@ -12,14 +12,14 @@ const screenHeight = Dimensions.get('screen').height;
 const screenWidth = Dimensions.get('screen').width;
 export const Login = () => {
   return (
-    <ScrollView style={styles.container1}>
+    <ScrollView style={styles.container}>
       <View style={styles.logoContainer}>
         <Image
           style={styles.logo}
           source={require('../../assets/visitor/download.png')}
         />
       </View>
-      <View style={styles.container}>
+      <View style={styles.btnOptionsContainer}>
         <View>
           <Text style={styles.textDescription}>
             Welcome to Adventist Youth App
@@ -41,10 +41,10 @@ export const Login = () => {
   );
 };
 const styles = StyleSheet.create({
-  container1: {
+  container: {
     backgroundColor: 'rgba(240, 248, 255, 0.667)',
   },
-  container: {
+  btnOptionsContainer: {
     transform: [{translateY: -(screenHeight / 2) * 0.27}],
     backgroundColor: 'white',
     marginLeft: screenWidth * 0.07,
