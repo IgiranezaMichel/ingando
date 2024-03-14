@@ -10,6 +10,7 @@ import {
   StatusBar,
   TextInput,
 } from 'react-native';
+import {Screen} from '../../hooks/screen';
 const screenHeight = Dimensions.get('screen').height;
 const screenWidth = Dimensions.get('screen').width;
 export const Login = () => {
@@ -33,47 +34,32 @@ export const Login = () => {
             />
           </View>
           <View>
-            <Text style={styles.avatarLegend}>Sign up form</Text>
+            <Text style={styles.avatarLegend}>Login form</Text>
           </View>
-          <TextInput
-            style={styles.firstNameInput}
-            underlineColorAndroid={'blue'}
-            placeholderTextColor={'grey'}
-            placeholder="Enter your name ..."
-          />
+          <View style={styles.inputContainer}>
+            <Image
+              style={styles.inputImageIcon}
+              source={require('../../assets/visitor/icons/user.png')}
+            />
+            <TextInput
+              style={styles.inputTxt}
+              placeholderTextColor={'grey'}
+              placeholder="Enter your email ..."
+            />
+          </View>
 
-          <TextInput
-            style={styles.firstNameInput}
-            underlineColorAndroid={'blue'}
-            placeholderTextColor={'grey'}
-            placeholder="Enter your gender ..."
-          />
-          <TextInput
-            style={styles.firstNameInput}
-            underlineColorAndroid={'blue'}
-            placeholderTextColor={'grey'}
-            placeholder="Enter your phone number ..."
-          />
-          <TextInput
-            style={styles.firstNameInput}
-            underlineColorAndroid={'blue'}
-            placeholderTextColor={'grey'}
-            placeholder="Enter your Email ..."
-          />
-          <TextInput
-            secureTextEntry={true}
-            style={styles.firstNameInput}
-            underlineColorAndroid={'blue'}
-            placeholderTextColor={'grey'}
-            placeholder="Enter your Password ..."
-          />
-          <TextInput
-            secureTextEntry={true}
-            style={styles.firstNameInput}
-            underlineColorAndroid={'blue'}
-            placeholderTextColor={'grey'}
-            placeholder="Re write your Password ..."
-          />
+          <View style={styles.inputPasswordContainer}>
+            <Image
+              style={styles.inputImageIcon}
+              source={require('../../assets/visitor/icons/hide.png')}
+            />
+            <TextInput
+              secureTextEntry={true}
+              style={styles.inputTxt}
+              placeholderTextColor={'grey'}
+              placeholder="Enter your Password ..."
+            />
+          </View>
           <TouchableWithoutFeedback onPress={() => {}}>
             <View style={styles.signUpBtn}>
               <Text style={styles.signUpTxt}>Sign up</Text>
@@ -101,8 +87,6 @@ const styles = StyleSheet.create({
     display: 'flex',
     justifyContent: 'center',
     alignItems: 'center',
-    borderBottomLeftRadius: 10,
-    borderBottomRightRadius: 10,
   },
   logo: {
     height: screenHeight * 0.05,
@@ -141,7 +125,35 @@ const styles = StyleSheet.create({
     fontSize: 19,
     padding: 12,
   },
-
+  inputContainer: {
+    display: 'flex',
+    flexDirection: 'row',
+    borderWidth: 1,
+    borderColor: 'grey',
+    width: Screen().width * 0.4,
+    alignSelf: 'center',
+    padding: 2,
+    borderRadius: 10,
+  },
+  inputPasswordContainer: {
+    display: 'flex',
+    flexDirection: 'row',
+    borderWidth: 1,
+    borderColor: 'grey',
+    width: Screen().width * 0.4,
+    alignSelf: 'center',
+    padding: 2,
+    borderRadius: 10,
+    marginTop: 20,
+  },
+  inputImageIcon: {
+    width: 40,
+    height: 40,
+  },
+  inputTxt: {
+    color: 'black',
+    width: Screen().width * 0.34,
+  },
   signUpBtn: {
     borderColor: 'black',
     backgroundColor: 'green',
