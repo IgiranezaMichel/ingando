@@ -1,6 +1,7 @@
 /* eslint-disable react/react-in-jsx-scope */
 import {
   Image,
+  ScrollView,
   StatusBar,
   StyleSheet,
   Text,
@@ -30,6 +31,20 @@ export const Home = () => {
           </TouchableOpacity>
         </View>
       </View>
+      <View style={styles.topSubContainer}>
+        <Text style={styles.ingandoText}>Available Ingando</Text>
+        <View style={styles.topSubContainerOption}>
+          <TouchableOpacity style={styles.activeBtn}>
+            <Text style={styles.ingandoOptionText}>All</Text>
+          </TouchableOpacity>
+          <TouchableOpacity>
+            <Text style={styles.ingandoOptionText}>History</Text>
+          </TouchableOpacity>
+        </View>
+      </View>
+      <ScrollView>
+        <Text style={styles.ingandoText}>Available Ingando</Text>
+      </ScrollView>
     </View>
   );
 };
@@ -40,7 +55,7 @@ const styles = StyleSheet.create({
   },
   topCOntainer: {
     display: 'flex',
-    height: Screen().height / 7,
+    height: Screen().height / 6,
     backgroundColor: 'blue',
     justifyContent: 'center',
     alignItems: 'center',
@@ -73,5 +88,40 @@ const styles = StyleSheet.create({
   },
   searchInput: {
     width: Screen().width / 1.33,
+  },
+  ingandoText: {
+    color: 'white',
+    fontWeight: 'bold',
+    fontFamily: 'fantasy',
+    margin: 10,
+    fontSize: Screen().width * 0.05,
+  },
+  ingandoOptionText: {
+    color: 'black',
+    fontWeight: 'bold',
+    fontFamily: 'fantasy',
+    margin: 10,
+    fontSize: Screen().width * 0.05,
+  },
+  topSubContainer: {
+    display: 'flex',
+    flexDirection: 'row',
+    width: Screen().width,
+    backgroundColor: 'blue',
+    marginTop: 2,
+    padding: 3,
+  },
+  topSubContainerOption: {
+    display: 'flex',
+    flexDirection: 'row',
+    alignContent:'flex-end',
+    borderWidth: 2,
+    borderColor: 'white',
+    backgroundColor: 'white',
+  },
+  activeBtn: {
+    backgroundColor: 'rgb(29, 110, 181)',
+    display: 'flex',
+    alignSelf: 'flex-end',
   },
 });
