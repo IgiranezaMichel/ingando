@@ -4,15 +4,15 @@ import {
   View,
   Text,
   StyleSheet,
-  Dimensions,
   Image,
   TouchableWithoutFeedback,
   StatusBar,
   TextInput,
 } from 'react-native';
-const screenHeight = Dimensions.get('screen').height;
-const screenWidth = Dimensions.get('screen').width;
-export const Login = () => {
+import {Screen} from '../../hooks/screen';
+const screenHeight = Screen().height;
+const screenWidth = Screen().width;
+export const SignUp = () => {
   return (
     <ScrollView style={styles.container}>
       <StatusBar backgroundColor={'blue'} />
