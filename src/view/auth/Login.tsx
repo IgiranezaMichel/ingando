@@ -10,7 +10,6 @@ import {
   StatusBar,
   TextInput,
 } from 'react-native';
-
 const screenHeight = Dimensions.get('screen').height;
 const screenWidth = Dimensions.get('screen').width;
 export const Login = () => {
@@ -18,10 +17,12 @@ export const Login = () => {
     <ScrollView style={styles.container}>
       <StatusBar backgroundColor={'blue'} />
       <View style={styles.logoContainer}>
-        <Image
-          style={styles.logo}
-          source={require('../../assets/visitor/download.png')}
-        />
+        <View style={styles.logoView}>
+          <Image
+            style={styles.logo}
+            source={require('../../assets/logo.png')}
+          />
+        </View>
       </View>
       <View style={styles.btnOptionsContainer}>
         <View>
@@ -85,16 +86,10 @@ export const Login = () => {
 };
 const styles = StyleSheet.create({
   container: {
-    backgroundColor: 'rgba(240, 248, 255, 0.667)',
+    backgroundColor: 'white',
   },
   btnOptionsContainer: {
     backgroundColor: 'white',
-    marginLeft: screenWidth * 0.07,
-    marginRight: screenWidth * 0.07,
-    borderColor: 'black',
-    shadowColor: '#000',
-    shadowOpacity: 0.9,
-    shadowRadius: 5,
     elevation: 10,
     paddingTop: 30,
     paddingBottom: 40,
@@ -105,13 +100,23 @@ const styles = StyleSheet.create({
     height: screenHeight / 5,
     display: 'flex',
     justifyContent: 'center',
-    alignItems: 'flex-start',
+    alignItems: 'center',
     borderBottomLeftRadius: 10,
     borderBottomRightRadius: 10,
   },
   logo: {
-    height: 80,
-    width: 80,
+    height: screenHeight * 0.05,
+    width: screenHeight * 0.05,
+  },
+  logoView: {
+    backgroundColor: 'white',
+    padding: 4,
+    borderRadius: 10,
+    borderWidth: 2,
+    borderColor: 'black',
+    shadowColor: 'black',
+    shadowOpacity: 0.9,
+    shadowRadius: 5,
   },
   avatar: {
     width: screenWidth * 0.2,
