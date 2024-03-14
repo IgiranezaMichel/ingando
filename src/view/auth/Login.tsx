@@ -1,5 +1,4 @@
 /* eslint-disable react/react-in-jsx-scope */
-import { Canvas, Circle } from '@shopify/react-native-skia';
 import {
   ScrollView,
   View,
@@ -18,15 +17,11 @@ export const Login = () => {
   return (
     <ScrollView style={styles.container}>
       <StatusBar backgroundColor={'blue'} />
-      
       <View style={styles.logoContainer}>
         <Image
           style={styles.logo}
           source={require('../../assets/visitor/download.png')}
         />
-        <Canvas>
-          <Circle cx={200} r={4}/>
-        </Canvas>
       </View>
       <View style={styles.btnOptionsContainer}>
         <View>
@@ -110,7 +105,7 @@ const styles = StyleSheet.create({
     height: screenHeight / 5,
     display: 'flex',
     justifyContent: 'center',
-    alignItems: 'center',
+    alignItems: 'flex-start',
     borderBottomLeftRadius: 10,
     borderBottomRightRadius: 10,
   },
@@ -131,7 +126,7 @@ const styles = StyleSheet.create({
     backgroundColor: 'white',
     display: 'flex',
     alignItems: 'center',
-    borderRadius: 50,
+    borderRadius: screenWidth * 0.3,
   },
   textDescription: {
     fontFamily: 'fantasy',
