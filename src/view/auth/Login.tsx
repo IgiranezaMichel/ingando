@@ -11,9 +11,11 @@ import {
   TextInput,
 } from 'react-native';
 import {Screen} from '../../hooks/screen';
+import {useState} from 'react';
 const screenHeight = Dimensions.get('screen').height;
 const screenWidth = Dimensions.get('screen').width;
 export const Login = () => {
+  const [hidePassword, setHidePassword] = useState(true);
   return (
     <ScrollView style={styles.container}>
       <StatusBar backgroundColor={'blue'} />
@@ -25,7 +27,7 @@ export const Login = () => {
           />
         </View>
       </View>
-      <View style={styles.btnOptionsContainer}>
+      <View style={styles.loginContainer}>
         <View>
           <View style={styles.avatarContainer}>
             <Image
@@ -49,23 +51,35 @@ export const Login = () => {
           </View>
 
           <View style={styles.inputPasswordContainer}>
-            <Image
-              style={styles.inputImageIcon}
-              source={require('../../assets/visitor/icons/hide.png')}
-            />
+            <TouchableWithoutFeedback
+              onPress={() => setHidePassword(!hidePassword)}>
+              <Image
+                style={styles.inputImageIcon}
+                source={require('../../assets/visitor/icons/hide.png')}
+              />
+            </TouchableWithoutFeedback>
             <TextInput
-              secureTextEntry={true}
+              secureTextEntry={hidePassword}
               style={styles.inputTxt}
               placeholderTextColor={'grey'}
               placeholder="Enter your Password ..."
             />
           </View>
+
+          <View>
+            <Text style={styles.forgetPasswordTxt}>Forget Password?</Text>
+          </View>
+
           <TouchableWithoutFeedback onPress={() => {}}>
-            <View style={styles.signUpBtn}>
-              <Text style={styles.signUpTxt}>Sign up</Text>
+            <View style={styles.loginBtb}>
+              <Text style={styles.loginTxt}>Login</Text>
             </View>
           </TouchableWithoutFeedback>
         </View>
+      </View>
+      <View style={styles.notMemberContainer}>
+        <Text style={styles.text}>Not a member?</Text>
+        <Text style={styles.signUpTxt}>Sign up</Text>
       </View>
     </ScrollView>
   );
@@ -74,9 +88,8 @@ const styles = StyleSheet.create({
   container: {
     backgroundColor: 'white',
   },
-  btnOptionsContainer: {
+  loginContainer: {
     backgroundColor: 'white',
-    elevation: 10,
     paddingTop: 30,
     paddingBottom: 40,
     borderRadius: 10,
@@ -87,6 +100,8 @@ const styles = StyleSheet.create({
     display: 'flex',
     justifyContent: 'center',
     alignItems: 'center',
+    borderBottomEndRadius: 23,
+    borderBottomStartRadius: 23,
   },
   logo: {
     height: screenHeight * 0.05,
@@ -96,11 +111,7 @@ const styles = StyleSheet.create({
     backgroundColor: 'white',
     padding: 4,
     borderRadius: 10,
-    borderWidth: 2,
-    borderColor: 'black',
-    shadowColor: 'black',
-    shadowOpacity: 0.9,
-    shadowRadius: 5,
+    borderWidth: 3,
   },
   avatar: {
     width: screenWidth * 0.2,
@@ -128,7 +139,7 @@ const styles = StyleSheet.create({
   inputContainer: {
     display: 'flex',
     flexDirection: 'row',
-    borderWidth: 1,
+    borderWidth: 2,
     borderColor: 'grey',
     width: Screen().width * 0.4,
     alignSelf: 'center',
@@ -138,7 +149,7 @@ const styles = StyleSheet.create({
   inputPasswordContainer: {
     display: 'flex',
     flexDirection: 'row',
-    borderWidth: 1,
+    borderWidth: 2,
     borderColor: 'grey',
     width: Screen().width * 0.4,
     alignSelf: 'center',
@@ -154,24 +165,40 @@ const styles = StyleSheet.create({
     color: 'black',
     width: Screen().width * 0.34,
   },
-  signUpBtn: {
-    borderColor: 'black',
-    backgroundColor: 'green',
-    width: screenWidth * 0.8,
-    alignSelf: 'center',
-    marginTop: screenHeight * 0.03,
+  forgetPasswordTxt: {
+    display: 'flex',
+    alignSelf: 'flex-end',
+    color: 'black',
+    marginRight: Screen().width * 0.03,
+    marginTop: 7,
+    fontWeight: 'bold',
   },
   signUpTxt: {
+    color: 'blue',
+    fontWeight: 'bold',
+  },
+  notMemberContainer: {
+    flexDirection: 'row',
+    justifyContent: 'flex-end',
+    alignItems: 'center',
+    paddingHorizontal: 20,
+    marginRight: Screen().width * 0.02,
+  },
+
+  loginBtb: {
+    borderColor: 'black',
+    backgroundColor: 'green',
+    width: screenWidth * 0.9,
+    alignSelf: 'center',
+    marginTop: screenHeight * 0.04,
+    borderWidth: 2,
+  },
+  loginTxt: {
     alignSelf: 'center',
     fontSize: 23,
     color: 'white',
     fontWeight: 'bold',
     padding: 6,
-  },
-  firstNameInput: {
-    color: 'black',
-    width: screenWidth * 0.8,
-    alignSelf: 'center',
   },
   avatarLegend: {
     color: 'black',
@@ -180,5 +207,9 @@ const styles = StyleSheet.create({
     alignSelf: 'center',
     fontSize: (screenWidth / screenHeight) * 60,
     transform: [{translateY: -(screenHeight / 2) * 0.1}],
+  },
+  text: {
+    color: 'black',
+    fontWeight: 'bold',
   },
 });
