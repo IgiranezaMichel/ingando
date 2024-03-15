@@ -15,10 +15,10 @@ export const Home = () => {
         <Text style={styles.recentIngandoTxt}>Recent Ingando</Text>
         <View style={styles.subContationerItemView}>
           <TouchableOpacity>
-            <Text style={styles.recentIngandoTxt}>All</Text>
+            <Text style={styles.allTxt}>All</Text>
           </TouchableOpacity>
           <TouchableOpacity>
-            <Text style={styles.recentIngandoTxt}>History</Text>
+            <Text style={styles.allTxt}>History</Text>
           </TouchableOpacity>
         </View>
       </View>
@@ -46,6 +46,7 @@ const styles = StyleSheet.create({
     display: 'flex',
     alignItems: 'center',
     justifyContent: 'center',
+    marginBottom: 3,
   },
   logo: {
     maxHeight:
@@ -65,6 +66,13 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
     fontFamily: 'fantasy',
     fontSize: Screen().width * 0.06,
+    width: Screen().width * 0.65,
+  },
+  allTxt: {
+    color: 'black',
+    fontWeight: 'bold',
+    fontFamily: 'fantasy',
+    fontSize: Screen().width * 0.06,
   },
   subContationer: {
     width: Screen().width,
@@ -73,7 +81,12 @@ const styles = StyleSheet.create({
   },
   subContationerItemView: {
     flexDirection: 'row',
-    alignSelf: 'baseline',
+    alignSelf: 'center',
     width: Screen().width,
+    alignItems: 'flex-end',
+    backgroundColor: 'blue',
+    borderWidth: 2,
+    borderColor: 'blue',
+    padding: 3,
   },
 });
