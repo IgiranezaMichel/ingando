@@ -1,6 +1,6 @@
 /* eslint-disable react-native/no-inline-styles */
 import React from 'react';
-import {View, Image, Text, StyleSheet, TouchableOpacity} from 'react-native';
+import {View, Image, Text, StyleSheet, TouchableOpacity, ScrollView} from 'react-native';
 import LottieView from 'lottie-react-native';
 import {Screen} from '../../hooks/screen';
 
@@ -22,6 +22,9 @@ export const Home = () => {
           </TouchableOpacity>
         </View>
       </View>
+      <ScrollView>
+        
+      </ScrollView>
       <LottieView
         autoPlay={true}
         source={require('../../assets/Lottie.json')}
