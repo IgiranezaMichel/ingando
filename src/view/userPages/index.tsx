@@ -11,7 +11,8 @@ export const Home = () => {
         <Image style={styles.logo} source={require('../../assets/logo.png')} />
         {/* Enclose the text within a Text component */}
       </View>
-      <LottieView autoPlay={true}
+      <LottieView
+        autoPlay={true}
         source={require('../../assets/Lottie.json')}
         style={{width: 100, height: 100}}
       />
@@ -27,15 +28,23 @@ const styles = StyleSheet.create({
   },
   subLogoContainer: {
     backgroundColor: 'blue',
-    height: Screen().width * 0.2,
+    height:
+      Screen().height > Screen().width
+        ? Screen().height * 0.1
+        : Screen().width * 0.2,
     display: 'flex',
     alignItems: 'center',
     justifyContent: 'center',
   },
   logo: {
-    width: Screen().width / 8,
-    height: Screen().width / 8,
+    width:
+      Screen().height > Screen().width
+        ? Screen().height * 0.9
+        : Screen().width * 0.2,
+    height: Screen().width / 7,
+    maxWidth: Screen().width / 7,
     borderColor: 'black',
-    borderWidth: 2,
+    borderWidth: 4,
+    borderRadius: 20,
   },
 });
