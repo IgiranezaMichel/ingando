@@ -1,6 +1,13 @@
 /* eslint-disable react-native/no-inline-styles */
 import React from 'react';
-import {View, Image, Text, StyleSheet, TouchableOpacity, ScrollView} from 'react-native';
+import {
+  View,
+  Image,
+  Text,
+  StyleSheet,
+  TouchableOpacity,
+  ScrollView,
+} from 'react-native';
 import LottieView from 'lottie-react-native';
 import {Screen} from '../../hooks/screen';
 
@@ -23,7 +30,13 @@ export const Home = () => {
         </View>
       </View>
       <ScrollView>
-        
+        <View>
+          <Text style={styles.ingandoHeader}>Ingando name</Text>
+        </View>
+        <View>
+        <Text style={styles.ingandoHeader}>location</Text>
+        <Text style={styles.ingandoHeader}>deadline</Text>
+        </View>
       </ScrollView>
       <LottieView
         autoPlay={true}
@@ -76,6 +89,11 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
     fontFamily: 'fantasy',
     fontSize: Screen().width * 0.06,
+  },
+  ingandoHeader: {
+    color: 'black',
+    fontFamily: 'fantasy',
+    fontWeight: 'bold',
   },
   subContationer: {
     width: Screen().width,
