@@ -31,11 +31,13 @@ export const Home = () => {
       </View>
       <ScrollView>
         <View>
-          <Text style={styles.ingandoHeader}>Ingando name</Text>
-        </View>
-        <View>
-        <Text style={styles.ingandoHeader}>location</Text>
-        <Text style={styles.ingandoHeader}>deadline</Text>
+          <View>
+            <Text style={styles.ingandoHeader}>Ingando name</Text>
+          </View>
+          <View>
+            <Text style={styles.ingandoHeader}>location</Text>
+            <Text style={styles.ingandoHeader}>deadline</Text>
+          </View>
         </View>
       </ScrollView>
       <LottieView
