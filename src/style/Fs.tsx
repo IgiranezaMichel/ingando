@@ -13,4 +13,7 @@ export const FontSize = StyleSheet.create({
   display4: {
     fontSize: 12,
   },
+  display5: {
+    fontSize: 7,
+  },
 });
