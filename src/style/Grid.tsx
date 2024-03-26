@@ -19,6 +19,7 @@ export const Grid = StyleSheet.create({
   colSm9: {width: '75%'},
   colSm10: {width: '83.33333%'},
   colSm11: {width: '91.66667%'},
+  colSm11_5: {width: '96%'},
   colSm12: {width: '100%'},
   mAuto: {alignSelf: 'center'},
   mLeft: {alignSelf: 'flex-start'},
