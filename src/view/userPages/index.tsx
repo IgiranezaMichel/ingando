@@ -127,15 +127,13 @@ export const Home = () => {
 const styles = StyleSheet.create({
   container: {
     backgroundColor: 'white',
-    height: Screen().height,
-    width: Screen().width,
+    height: Screen.height,
+    width: Screen.width,
   },
   subLogoContainer: {
     backgroundColor: 'blue',
     height:
-      Screen().height > Screen().width
-        ? Screen().height * 0.16
-        : Screen().width * 0.2,
+      Screen.height > Screen.width ? Screen.height * 0.16 : Screen.width * 0.2,
     display: 'flex',
     alignItems: 'center',
     justifyContent: 'center',
@@ -143,13 +141,9 @@ const styles = StyleSheet.create({
   },
   logo: {
     maxHeight:
-      Screen().height > Screen().width
-        ? Screen().height * 0.07
-        : Screen().width * 0.1,
+      Screen.height > Screen.width ? Screen.height * 0.07 : Screen.width * 0.1,
     maxWidth:
-      Screen().height > Screen().width
-        ? Screen().height * 0.07
-        : Screen().width * 0.1,
+      Screen.height > Screen.width ? Screen.height * 0.07 : Screen.width * 0.1,
     borderColor: 'black',
     borderWidth: 4,
     borderRadius: 20,
