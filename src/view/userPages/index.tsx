@@ -16,21 +16,20 @@ export const Home = () => {
     <View style={styles.container}>
       <View style={styles.subLogoContainer}>
         <Image style={styles.logo} source={require('../../assets/logo.png')} />
-        {/* Enclose the text within a Text component */}
       </View>
       <View style={styles.subContationer}>
-        <Text style={styles.recentIngandoTxt}>Recent Ingando</Text>
-        <View style={styles.subContationerItemView}>
+        <Text style={styles.rescentIngandoTxt}>Recent Camp</Text>
+        <View style={styles.optionView}>
           <TouchableOpacity style={styles.allBtn}>
-            <Text style={styles.allTxt}>All</Text>
+            <Text style={styles.b}>All</Text>
           </TouchableOpacity>
           <TouchableOpacity>
-            <Text style={styles.allTxt}>History</Text>
+            <Text style={styles.b}>History</Text>
           </TouchableOpacity>
         </View>
       </View>
       <ScrollView>
-        <View>
+        <View style={styles.cardView}>
           <View>
             <Text style={styles.ingandoHeader}>Ingando name</Text>
           </View>
@@ -39,6 +38,11 @@ export const Home = () => {
             <Text style={styles.ingandoHeader}>deadline</Text>
           </View>
         </View>
+        <LottieView
+          source={require('../../assets/lotties/empty.json')}
+          style={{width: 100, height: 100}}
+          autoPlay={false}
+        />
       </ScrollView>
       <LottieView
         autoPlay={true}
@@ -84,13 +88,19 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
     fontFamily: 'fantasy',
     fontSize: Screen().width * 0.06,
-    width: Screen().width * 0.65,
   },
   allTxt: {
     color: 'black',
     fontWeight: 'bold',
     fontFamily: 'fantasy',
     fontSize: Screen().width * 0.06,
+  },
+  cardView: {
+    padding: 2,
+    width: Screen().width * 0.9,
+    backgroundColor: 'blue',
+    alignSelf: 'center',
+    marginTop: 10,
   },
   ingandoHeader: {
     color: 'black',
@@ -101,18 +111,29 @@ const styles = StyleSheet.create({
     width: Screen().width,
     flexDirection: 'row',
     display: 'flex',
+    padding: Screen().width * 0.02,
+    justifyContent: 'space-between',
+    borderBottomWidth: 2,
+    borderBottomColor: 'black',
   },
-  subContationerItemView: {
+  optionView: {
+    display: 'flex',
     flexDirection: 'row',
-    alignSelf: 'center',
-    width: Screen().width,
-    alignItems: 'flex-end',
     backgroundColor: 'blue',
-    borderWidth: 2,
-    borderColor: 'blue',
+    padding: 2,
+  },
+  rescentIngandoTxt: {
+    color: 'black',
+    fontWeight: 'bold',
+    fontSize: Screen().width * 0.05,
+  },
+  b: {
+    color: 'black',
+    fontSize: Screen().width * 0.05,
   },
   allBtn: {
     backgroundColor: 'white',
-    padding: 2,
+    elevation: 10,
+    marginRight: 10,
   },
 });
