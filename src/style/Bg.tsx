@@ -13,4 +13,7 @@ export const Bg = StyleSheet.create({
   bgMuted: {
     backgroundColor: '#6c757d',
   },
+  bgWhite: {
+    backgroundColor: 'white',
+  },
 });
