@@ -8,6 +8,8 @@ export const Border = StyleSheet.create({
   border3: {borderWidth: 4},
   border4: {borderWidth: 5},
   border5: {borderWidth: 6},
+  borderTop: {borderTopWidth: 1},
+  borderBottom: {borderBottomWidth: 1},
   borderPrimary: {borderColor: '#007bff'},
   borderDark: {borderColor: 'blak'},
   borderSuCess: {borderColor: '#28a745'},
