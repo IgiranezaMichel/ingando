@@ -13,6 +13,7 @@ import {Screen} from '../../hooks/screen';
 import {Grid} from '../../style/Grid';
 import {Card} from '../../style/Card';
 import {Txt} from '../../style/Text';
+import {rounded} from '../../style/Rounded';
 
 export const Home = () => {
   return (
@@ -20,19 +21,8 @@ export const Home = () => {
       <View style={styles.subLogoContainer}>
         <Image style={styles.logo} source={require('../../assets/logo.png')} />
       </View>
-      <View style={styles.subContationer}>
-        <Text style={styles.rescentIngandoTxt}>Recent Camp</Text>
-        <View style={styles.optionView}>
-          <TouchableOpacity style={styles.allBtn}>
-            <Text style={styles.b}>All</Text>
-          </TouchableOpacity>
-          <TouchableOpacity>
-            <Text style={styles.b}>History</Text>
-          </TouchableOpacity>
-        </View>
-      </View>
       <ScrollView>
-        <View style={[Card.card]}>
+        <View style={[Card.card, rounded.rounded0, Grid.colSm11, Grid.mAuto]}>
           <Text style={[Txt.textSuccess, Txt.textDark]}>Header</Text>
         </View>
       </ScrollView>
@@ -74,58 +64,5 @@ const styles = StyleSheet.create({
     borderColor: 'black',
     borderWidth: 4,
     borderRadius: 20,
-  },
-  recentIngandoTxt: {
-    color: 'black',
-    fontWeight: 'bold',
-    fontFamily: 'fantasy',
-    fontSize: Screen().width * 0.06,
-  },
-  allTxt: {
-    color: 'black',
-    fontWeight: 'bold',
-    fontFamily: 'fantasy',
-    fontSize: Screen().width * 0.06,
-  },
-  cardView: {
-    padding: 2,
-    width: Screen().width * 0.9,
-    backgroundColor: '#D9D9D9',
-    alignSelf: 'center',
-    marginTop: 10,
-  },
-  ingandoHeader: {
-    color: 'black',
-    fontFamily: 'fantasy',
-    fontWeight: 'bold',
-  },
-  subContationer: {
-    width: Screen().width,
-    flexDirection: 'row',
-    display: 'flex',
-    padding: Screen().width * 0.02,
-    justifyContent: 'space-between',
-    borderBottomWidth: 2,
-    borderBottomColor: 'black',
-  },
-  optionView: {
-    display: 'flex',
-    flexDirection: 'row',
-    backgroundColor: 'blue',
-    padding: 2,
-  },
-  rescentIngandoTxt: {
-    color: 'black',
-    fontWeight: 'bold',
-    fontSize: Screen().width * 0.05,
-  },
-  b: {
-    color: 'black',
-    fontSize: Screen().width * 0.05,
-  },
-  allBtn: {
-    backgroundColor: 'white',
-    elevation: 10,
-    marginRight: 10,
   },
 });
