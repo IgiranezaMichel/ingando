@@ -24,4 +24,6 @@ export const Grid = StyleSheet.create({
   mAuto: {alignSelf: 'center'},
   mLeft: {alignSelf: 'flex-start'},
   mRight: {alignSelf: 'flex-end'},
+  m0: {marginVertical: 0},
+  g1: {marginHorizontal: 10},
 });
