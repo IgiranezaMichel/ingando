@@ -10,6 +10,9 @@ import {
 } from 'react-native';
 import LottieView from 'lottie-react-native';
 import {Screen} from '../../hooks/screen';
+import {Grid} from '../../style/Grid';
+import {Card} from '../../style/Card';
+import {Txt} from '../../style/Text';
 
 export const Home = () => {
   return (
@@ -29,20 +32,9 @@ export const Home = () => {
         </View>
       </View>
       <ScrollView>
-        <View style={styles.cardView}>
-          <View>
-            <Text style={styles.ingandoHeader}>Ingando name</Text>
-          </View>
-          <View>
-            <Text style={styles.ingandoHeader}>location</Text>
-            <Text style={styles.ingandoHeader}>deadline</Text>
-          </View>
+        <View style={[Card.card]}>
+          <Text style={[Txt.textSuccess, Txt.textDark]}>Header</Text>
         </View>
-        <LottieView
-          source={require('../../assets/lotties/empty.json')}
-          style={{width: 100, height: 100}}
-          autoPlay={false}
-        />
       </ScrollView>
       <LottieView
         autoPlay={true}
@@ -98,7 +90,7 @@ const styles = StyleSheet.create({
   cardView: {
     padding: 2,
     width: Screen().width * 0.9,
-    backgroundColor: 'blue',
+    backgroundColor: '#D9D9D9',
     alignSelf: 'center',
     marginTop: 10,
   },
