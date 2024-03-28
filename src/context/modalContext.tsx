@@ -1,6 +1,13 @@
-import { createContext } from "react";
+import {createContext, useContext} from 'react';
+import {ModalContextType} from '../typeDef/modalContextType';
 
-export const ModalContext=createContext<undefined>(undefined);
-export const useModal=()=>{
-    if()
-}
+export const ModalContext = createContext<ModalContextType | undefined>(
+  undefined,
+);
+export const useModalContext = () => {
+  const modal = useContext(ModalContext);
+  if (modal === undefined) {
+    throw Error('No data found');
+  }
+  return modal;
+};
